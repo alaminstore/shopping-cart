@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import Basket from "./components/Basket";
 import Header from "./components/Header";
@@ -14,11 +15,12 @@ function App() {
       const newCartItem = cartItems.map((x) =>
         x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
       );
-      console.log("hello", newCartItem);
       setCartItems(newCartItem);
+      localStorage.setItem("cartItems", JSON.stringify(newCartItem));
     } else {
       const newCartItem = [...cartItems, { ...product, qty: 1 }];
       setCartItems(newCartItem);
+      localStorage.setItem("cartItems", JSON.stringify(newCartItem));
     }
   };
   const onRemove = (product) => {
@@ -26,13 +28,24 @@ function App() {
     if (exist.qty === 1) {
       const newCartItem = cartItems.filter((x) => x.id !== product.id);
       setCartItems(newCartItem);
+      localStorage.setItem("cartItems", JSON.stringify(newCartItem));
     } else {
       const newCartItem = cartItems.map((x) =>
         x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
       );
       setCartItems(newCartItem);
+      localStorage.setItem("cartItems", JSON.stringify(newCartItem));
     }
   };
+
+  useEffect(() => {
+    setCartItems(
+      localStorage.getItem("cartItems")
+        ? JSON.parse(localStorage.getItem("cartItems"))
+        : []
+    );
+  }, []);
+
   return (
     <div className="App">
       <Header countCartItems={cartItems.length} />
