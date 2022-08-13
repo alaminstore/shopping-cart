@@ -53,7 +53,12 @@ const Basket = (props) => {
             </div>
           </div>
           <hr />
-          <button className="caryAdd">CheckOut</button>
+          <button
+            className="caryAdd"
+            onClick={() => alert("next process here...")}
+          >
+            CheckOut
+          </button>
         </>
       )}
     </aside>
