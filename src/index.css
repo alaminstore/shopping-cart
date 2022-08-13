@@ -1,13 +1,76 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: rgb(8, 99, 99);
+}
+button {
+  cursor: pointer;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  margin: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.col-1 {
+  flex-basis: 100%;
+}
+.col-2 {
+  flex-basis: 100%;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media screen and (min-width: 800px) {
+  .col-1 {
+    flex: 1;
+  }
+  .col-2 {
+    flex: 2;
+  }
+}
+.block {
+  background-color: #bee8f7;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+img.small {
+  max-height: 8rem;
+  height: 100%;
+}
+.card {
+  background-color: #fff;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+button.caryAdd {
+  padding: 0.4rem;
+  border: 1px solid rgb(14, 14, 14);
+  background-color: coral;
+  width: 100%;
+  cursor: pointer;
+}
+button.badge {
+  background-color: red;
+  border: none;
+  color: #fff;
+  width: 1.5rem;
+}
+button.add {
+  background-color: rgb(13, 220, 20);
+  color: #fff;
+  padding: 0 6px;
+}
+button.remove {
+  background-color: rgb(252, 77, 3);
+  padding: 0 6px;
+  color: #fff;
 }
