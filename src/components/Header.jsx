@@ -9,12 +9,7 @@ const Header = (props) => {
       </div>
       <div>
         <a href="#">
-          Cart
-          {countCartItems ? (
-            <button className="badge">{countCartItems}</button>
-          ) : (
-            ""
-          )}
+          Cart <sup className="cartItem">{countCartItems}</sup>
         </a>{" "}
         &nbsp; &nbsp; <a href="#">SignIn</a>
       </div>

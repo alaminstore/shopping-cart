@@ -4,13 +4,13 @@ const data = {
       id: 1,
       name: "apple",
       price: 1400,
-      image: "https://picsum.photos/200/300",
+      image: "https://picsum.photos/536/354",
     },
     {
       id: 2,
       name: "Old CAR",
       price: 2400,
-      image: "https://picsum.photos/seed/picsum/200/300",
+      image: "https://picsum.photos/200/300/?blur",
     },
     {
       id: 3,
